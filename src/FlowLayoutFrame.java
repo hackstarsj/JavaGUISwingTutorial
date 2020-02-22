@@ -3,19 +3,16 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class FlowLayoutExample {
-    public static void main(String args[]){
+public class FlowLayoutFrame extends JFrame {
+    public FlowLayoutFrame(String title){
         System.out.println("=====================Java GUI Tutorial=================");
 
-        JFrame jFrame=new JFrame("Window Title");
-        jFrame.setSize(300,300);
-
+        setTitle(title);
+        setSize(300,300);
         //Adding Layout
         FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER,10,10);
-        jFrame.setLayout(flowLayout);
+        setLayout(flowLayout);
 
         //Adding Label into Frame
 
@@ -36,14 +33,9 @@ public class FlowLayoutExample {
             Font font=new Font("serif",Font.BOLD+Font.ITALIC,20);
             jLabel.setFont(font);
 
-            jFrame.add(jLabel);
-
-
+            add(jLabel);
 
         }
-
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setVisible(true);
 
     }
 }
