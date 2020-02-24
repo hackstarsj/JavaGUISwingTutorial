@@ -2,9 +2,15 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class MainGUIProgram {
     public static void main(String args[]){
@@ -55,6 +61,23 @@ public class MainGUIProgram {
             }
         });
         jFrame.add(gridlayoutbutton);
+
+
+        //Form Button
+        JButton formButton=new JButton("Show Form Example");
+        formButton.setBackground(Color.BLACK);
+        formButton.setForeground(Color.WHITE);
+        formButton.setFont(font);
+        formButton.setFocusPainted(false);
+        formButton.setBorder(compoundBorder);
+        formButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                GUIFormExampleWindow formwindow=new GUIFormExampleWindow();
+                formwindow.setVisible(true);
+            }
+        });
+        jFrame.add(formButton);
 
 
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
