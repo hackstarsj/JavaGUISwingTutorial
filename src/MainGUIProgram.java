@@ -17,7 +17,13 @@ public class MainGUIProgram {
         System.out.println("===============JAVA SWING GUI PROGRAM====================");
 
         JFrame jFrame=new JFrame("Java GUI SWING PROGRAM");
-        FlowLayout flowLayout=new FlowLayout(FlowLayout.LEFT);
+
+        JPanel jPanel=new JPanel();
+
+        BoxLayout flowLayout=new BoxLayout(jPanel,BoxLayout.Y_AXIS);
+        jPanel.setLayout(flowLayout);
+        jFrame.add(jPanel);
+
         jFrame.setSize(400,300);
 
 //        Font Object
@@ -45,7 +51,7 @@ public class MainGUIProgram {
                 flowLayoutFrame.setVisible(true);
             }
         });
-        jFrame.add(flowLayoutButton);
+        jPanel.add(flowLayoutButton);
 
         JButton gridlayoutbutton=new JButton("Show Grid Layout Example");
         gridlayoutbutton.setBackground(Color.BLACK);
@@ -60,7 +66,7 @@ public class MainGUIProgram {
                 gridLayoutFrame.setVisible(true);
             }
         });
-        jFrame.add(gridlayoutbutton);
+        jPanel.add(gridlayoutbutton);
 
 
         //Form Button
@@ -77,11 +83,27 @@ public class MainGUIProgram {
                 formwindow.setVisible(true);
             }
         });
-        jFrame.add(formButton);
+        jPanel.add(formButton);
+
+
+        //Progress Slider Button
+        JButton progressslider=new JButton("Show Progress and Slider Example");
+        progressslider.setBackground(Color.BLACK);
+        progressslider.setForeground(Color.WHITE);
+        progressslider.setFont(font);
+        progressslider.setFocusPainted(false);
+        progressslider.setBorder(compoundBorder);
+        progressslider.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                ProgressBarSliderWindow progressBarSliderWindow=new ProgressBarSliderWindow();
+                progressBarSliderWindow.setVisible(true);
+            }
+        });
+        jPanel.add(progressslider);
 
 
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setLayout(flowLayout);
         jFrame.setVisible(true);
     }
 }
