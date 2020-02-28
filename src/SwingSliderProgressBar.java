@@ -26,6 +26,7 @@ public class SwingSliderProgressBar {
 
         //show text progress
         jProgressBar.setStringPainted(true);
+        //jProgressBar.setIndeterminate(true);
         jProgressBar.setForeground(Color.GREEN);
 
         jPanel.add(jProgressBar);
