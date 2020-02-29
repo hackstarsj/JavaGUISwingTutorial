@@ -103,6 +103,23 @@ public class MainGUIProgram {
         jPanel.add(progressslider);
 
 
+        //Table Slider Button
+        JButton tablebutton=new JButton("Show Table Example");
+        tablebutton.setBackground(Color.BLACK);
+        tablebutton.setForeground(Color.WHITE);
+        tablebutton.setFont(font);
+        tablebutton.setFocusPainted(false);
+        tablebutton.setBorder(compoundBorder);
+        tablebutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                SwingTableFrame swingTableFrame=new SwingTableFrame();
+                swingTableFrame.setVisible(true);
+            }
+        });
+        jPanel.add(tablebutton);
+
+
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
     }
