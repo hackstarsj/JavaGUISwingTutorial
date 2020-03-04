@@ -119,6 +119,22 @@ public class MainGUIProgram {
         });
         jPanel.add(tablebutton);
 
+        //Tab Button
+        JButton tabbutton=new JButton("Show Tab Example");
+        tabbutton.setBackground(Color.BLACK);
+        tabbutton.setForeground(Color.WHITE);
+        tabbutton.setFont(font);
+        tabbutton.setFocusPainted(false);
+        tabbutton.setBorder(compoundBorder);
+        tabbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                SwingTabFrame swingTabFrame=new SwingTabFrame();
+                swingTabFrame.setVisible(true);
+            }
+        });
+        jPanel.add(tabbutton);
+
 
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
